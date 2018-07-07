@@ -1,0 +1,1 @@
+{"version":3,"sources":["style.scss"],"names":[],"mappings":"AAEA,KACI,MAAA","file":"app.min.css","sourcesContent":["$pri: purple;\n\nbody {\n    color: $pri;\n}"]}

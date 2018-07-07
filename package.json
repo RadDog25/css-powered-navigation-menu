@@ -1,0 +1,22 @@
+{
+  "name": "braidstarter",
+  "version": "1.0.0",
+  "author": "Braid",
+  "license": "ISC",
+  "scripts": {
+    "start": "gulp watch"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-clean-css": "^2.4.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^2.6.1"
+  }
+}
