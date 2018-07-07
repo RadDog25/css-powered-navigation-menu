@@ -4,7 +4,7 @@
   "author": "Braid",
   "license": "ISC",
   "scripts": {
-    "start": "gulp watch"
+    "dev": "gulp watch"
   },
   "devDependencies": {
     "browser-sync": "^2.18.13",
@@ -18,5 +18,8 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^2.6.1"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.0"
   }
 }
