@@ -1,0 +1,221 @@
+.site-content {
+    padding-top: $header_height;
+}
+
+.site-header {
+    background-color: $pri;
+    height: $header_height;
+    display: flex;
+    align-items: center;
+    padding: 0px 1.5rem;
+    box-shadow: $shadow;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    &__brandingContainer {
+        display: block;
+        margin-right: auto;
+    }
+
+    &__brandingImage {
+        display: block;
+        width: 30px;
+        height: 30px;
+    }
+
+    &__hamburgerContainer {
+        display: block;
+        cursor: pointer;
+        padding: 0.5rem;
+        border-radius: 50%;
+        transition: background-color 300ms ease;
+    }
+
+    input:checked ~ &__hamburgerContainer {
+        background-color: darken($pri, 10%);
+    }
+
+    &__hamburgerImage {
+        display: block;
+        width: 18px;
+        height: 18px;
+    }
+
+    &__menu {
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    &__category {
+        transform: translate3d(0px, 0px, 0px);
+    }
+
+    &__item {
+        backface-visibility: hidden;
+    }
+
+    &__input {
+        display: none;
+    }
+
+    &__links {
+        list-style: none;
+        padding: 0px;
+    }
+
+    &__linkContainer {
+        line-height: 1.1;
+        padding: 0.25rem 1rem;
+        transition: background-color 300ms ease;
+    }
+}
+
+@media screen and (max-width: $breakpoint) {
+    .site-header {
+        &__menu {
+            z-index: 2;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            height: 100vh;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            box-shadow: $shadow;
+            padding: 1rem 2rem 5rem;
+            background-color: $sec;
+            box-shadow: $shadow;
+            transition: all 300ms ease;
+            transform: translate3d(100%, 0px, 0px);
+            opacity: 0;
+        }
+
+        input:checked ~ &__menu {
+            transform: translate3d(0px, 0px, 0px);
+            opacity: 1;
+        }
+
+        &__item {
+            margin-bottom: 1rem;
+            &:last-child {
+                margin-bottom: 0px;
+            }
+        }
+
+        &__category {
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            margin: 0px;
+            cursor: pointer;
+        }
+
+        &__links {
+            padding-left: 0rem;
+        }
+
+        &__hamburgerShadow {
+            position: absolute;
+            visibility: hidden;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.8);
+            opacity: 0;
+            transition: opacity 300ms ease;
+        }
+
+        input:checked ~ &__hamburgerShadow {
+            z-index: 1;
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+@media screen and (min-width: $breakpoint + 1px) {
+    .site-header {
+        &__hamburgerContainer {
+            display: none;
+        }
+
+        &__hamburgerTrigger {
+            display: none;
+        }
+
+        &__hamburgerShadow {
+            display: none;
+        }
+
+        &__menu {
+            display: flex;
+        }
+
+        &__item {
+            position: relative;
+
+            &:before {
+                content: "";
+                z-index: 1;
+                display: block;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 100%;
+                background-color: $pri;
+            }
+        }
+
+        &__category {
+            z-index: 2;
+            position: relative;
+            padding: 0px 1.5rem;
+            height: $header_height;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 300ms ease;
+            background-color: $pri;
+            &:hover {
+                background-color: darken($pri, 4%);
+            }
+        }
+
+        &__links {
+            z-index: 0;
+            position: absolute;
+            padding: 0.25rem 0px;
+            left: 50%;
+            top: 100%;
+            min-width: 100%;
+            background-color: $sec;
+            box-shadow: $shadow;
+            opacity: 0;
+            transform: translate3d(-50%, -100%, 0px);
+            transition: all 300ms ease;
+        }
+
+        &__linkContainer {
+            &:hover {
+                background-color: $ter;
+            }
+        }
+
+        &__link {
+            display: block;
+        }
+
+        input:checked ~ &__links {
+            opacity: 1;
+            transform: translate3d(-50%, 0px, 0px);
+        }
+    }
+}

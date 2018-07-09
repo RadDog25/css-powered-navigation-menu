@@ -1,0 +1,14 @@
+.site-footer {
+    padding: 1rem;
+    background-color: $pri;
+    &__githubContainer {
+        display: block;
+    }
+
+    &__githubImage {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 32px;
+    }
+}
