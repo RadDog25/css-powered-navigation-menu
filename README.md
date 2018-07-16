@@ -3,6 +3,8 @@ A responsive navigation menu with no JS dependency - CSS only. Handy for bootstr
 
 http://cssnavmenu.raddog25.surge.sh/
 
+https://chrisgeelhoed.com/might-not-need-javascript-header-menus/
+
 ## Quickstart
 
 ```
